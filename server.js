@@ -4,6 +4,8 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const { User } = require("./models/user");
 const { Movie } = require("./models/createmovie");
+const session = require("express-session");
+const { auth_middleware } = require("./middlewares/auth");
 
 
 
@@ -21,11 +23,18 @@ mongoose.connect(DB_URL).then(() => console.log("DB Connected")).catch((e) => {
 
 //////////////////////////////////////////
 
-//static folder in css
+//static folder in css /// using use key word all are middleware....
 app.use(express.static("static"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
+app.use(
+  session({
+    secret: "your-secret-key",
+    resave: false,
+    saveUninitialized: false,
+  })
+);
+app.use(auth_middleware);
 
 
 app.get("/", (req, res) => {
@@ -36,18 +45,40 @@ app.get("/", (req, res) => {
 app.get("/sign-in", (req, res) => {
   res.render("signIn.ejs");
 });
+
+app.post("/sign-in", async (req, res) => {
+  const { email, password } = req.body;
+  let exists = await User.findOne({ email });
+
+  if (!exists) {
+    return res.send("User does not exists");
+  }
+  if (exists.password !== password) {
+    return res.send("Wrong password");
+  }
+  req.session.user = exists;
+  res.redirect("/");
+});
+
+
+
+
+
+
+
+
 //Sign-up
 app.get("/sign-up", (req, res) => {
   res.render("signUp.ejs");
 });
 
-app.post("/user", (req, res) => {
+app.post("/user", async (req, res) => {
   console.log(req.body);
   const email = req.body.email;
   const password1 = req.body.password1;
   const password2 = req.body.password2;
 
-  let exists = User.findOne({ email });
+  let exists = await User.findOne({ email });
   console.log(exists);
   if (exists) {
     res.send(`User already exists!`);
@@ -56,12 +87,11 @@ app.post("/user", (req, res) => {
   if (password1 !== password2) {
     res.send("Password do not match!")
   }
-  User.create({
+  await User.create({
     email,
     password: password1,
-  }).then((res) => {
-    console.log(res);
   })
+
   res.send(`User created ${email}  ${password1} ${password2}`)
 });
 /////////signup////////
