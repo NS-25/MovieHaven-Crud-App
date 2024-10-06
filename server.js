@@ -1,8 +1,9 @@
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
-const bodyParser = require("body-parser")
+const bodyParser = require("body-parser");
 const { User } = require("./models/user");
+const { Movie } = require("./models/createmovie");
 
 
 
@@ -63,8 +64,11 @@ app.post("/user", (req, res) => {
   })
   res.send(`User created ${email}  ${password1} ${password2}`)
 });
-/////////
-
+/////////signup////////
+/// Create movie ///
+app.get("/create/movies", (req, res) => {
+  res.render("createmovie.ejs")
+});
 
 
 
