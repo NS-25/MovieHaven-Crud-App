@@ -17,6 +17,11 @@
   max-width: max-content;
 }
 
+.form__username {
+  display: flex;
+  flex-direction: column;
+}
+
 .form__email {
   display: flex;
   flex-direction: column;

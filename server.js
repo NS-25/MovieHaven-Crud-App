@@ -1,17 +1,15 @@
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
+const bcrypt = require("bcrypt")
 const bodyParser = require("body-parser");
 const { User } = require("./models/user");
 const { Movie } = require("./models/createmovie");
 const session = require("express-session");
-const { auth_middleware } = require("./middlewares/auth");
-
-
-
+const passUserToView = require("./middlewares/pass-user-to-view.js");
+// const { auth_middleware } = require("./middlewares/auth");
 
 const app = express();
-
 
 // DB_URL import here
 const DB_URL = process.env.DB_URL;
@@ -29,13 +27,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(
   session({
-    secret: "your-secret-key",
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
   })
 );
-app.use(auth_middleware);
-
+app.use(passUserToView)
+// app.use(auth_middleware);
 
 app.get("/", (req, res) => {
   res.render("home.ejs");
@@ -53,17 +51,22 @@ app.post("/sign-in", async (req, res) => {
   if (!exists) {
     return res.send("User does not exists");
   }
-  if (exists.password !== password) {
+
+  const validPassword = bcrypt.compareSync(
+    password,
+    exists.password
+  )
+
+  if (!validPassword) {
     return res.send("Wrong password");
   }
-  req.session.user = exists;
+  req.session.user = {
+    username: exists.username,
+    _id: exists._id
+  };
+
   res.redirect("/");
 });
-
-
-
-
-
 
 
 
@@ -75,11 +78,12 @@ app.get("/sign-up", (req, res) => {
 app.post("/user", async (req, res) => {
   console.log(req.body);
   const email = req.body.email;
+  const username = req.body.username;
   const password1 = req.body.password1;
   const password2 = req.body.password2;
 
   let exists = await User.findOne({ email });
-  console.log(exists);
+
   if (exists) {
     res.send(`User already exists!`);
   }
@@ -87,12 +91,21 @@ app.post("/user", async (req, res) => {
   if (password1 !== password2) {
     res.send("Password do not match!")
   }
-  await User.create({
+
+  const hashedPassword = bcrypt.hashSync(password1, 10);
+
+  const user = await User.create({
     email,
-    password: password1,
+    password: hashedPassword,
+    username: username
   })
 
-  res.send(`User created ${email}  ${password1} ${password2}`)
+  req.session.user = {
+    username: user.username,
+    _id: user._id
+  };
+
+  res.redirect("/")
 });
 /////////signup////////
 /// Create movie ///
