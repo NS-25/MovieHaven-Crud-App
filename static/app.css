@@ -1,6 +1,6 @@
 /* home page */
 body {
-  /* background-color: #387478; */
+  /* background-color: #55679C; */
 }
 
 .container {
@@ -31,11 +31,14 @@ body {
   border-radius: 5px;
   max-width: max-content;
   width: 320px;
+  /* color: white; */
+  background-color: #D1E9F6;
 }
 
 .card__title {
   font-size: 1.2rem;
   margin-bottom: 0.3em;
+  margin-top: 0.2em;
 }
 
 .card__image {
@@ -51,7 +54,9 @@ body {
 .card__description,
 .card__duration,
 .card__rating {
-  font-size: 0.8rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-family: sans-serif;
   color: #222222db;
   line-height: 1.5;
   display: -webkit-box;
@@ -59,6 +64,20 @@ body {
   -webkit-line-clamp: 2;
   overflow: hidden;
 }
+
+.card__rating span {
+  /* border: 1px solid gray; */
+  background-color: #FFE700;
+  border-radius: 5px;
+  padding-inline: 0.5rem;
+}
+
+.card__duration span {
+  background-color: #FFE700;
+  border-radius: 5px;
+  padding-inline: 0.5rem;
+}
+
 
 
 

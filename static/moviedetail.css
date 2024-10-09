@@ -1,20 +1,69 @@
 /* write stylings for detail view */
 
 .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding-inline: 1em;
   /* padding top-bottom */
   padding-block: 1em;
-  border: 1px solid green;
+  /* border: 1px solid green; */
+  border: solid 5px #e3e3e3;
+  /* padding: 2.5em; */
+  border-radius: 5px;
 }
 
+.movie__detail__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  font-family: sans-serif;
+  font-size: xx-large;
+  padding-inline: 2rem;
+  /* border: 1px solid green; */
+  min-height: 400px;
+  /* justify-content: center; */
 
-img {
-  width: 400px;
-  height: 600px;
-  object-fit: contain;
-  border: 1px solid red;
 }
 
+.movie__detail__img {
+  width: 500px;
+  height: 550px;
+  /* object-fit: fill; */
+  /* border: 1px solid red; */
+}
+
+.movie__rating,
+.movie__duration {
+  background-color: #FFE700;
+  border-radius: 5px;
+  padding-inline: 0.5rem;
+}
+
+.movie__detail__btn {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  margin-top: 80px;
+  /* flex-wrap: wrap; */
+}
+
+.movie__detail__btn button {
+  font-size: medium;
+  border-radius: 5px;
+  width: 150px;
+  height: 50px;
+  border: none;
+  background-color: #507687;
+  cursor: pointer;
+  color: azure;
+}
+
+.movie__detail__btn button:hover {
+
+  background-color: #73EC8B;
+  color: black;
+}
 
 @media screen and (min-width: 600px) {
   .container {

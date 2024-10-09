@@ -5,16 +5,19 @@
   /* viewport height - header height */
   height: calc(100vh - 3.5em);
   border: 1px solid red;
+  background-color: #E7CCCC;
 }
 
 
 
 .form {
   min-width: 316px;
+  height: 300px;
   border: solid 1px #e3e3e3;
   padding: 2.5em;
   border-radius: 5px;
   max-width: max-content;
+  background-color: #e3e3e3;
 }
 
 .form__email {

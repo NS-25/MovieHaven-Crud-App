@@ -1,5 +1,6 @@
 <header class="header">
-  <a href="/" class="header__logo">LOGO</a>
+
+  <a href="/" class="header__logo">MovieHaven</a><i class="fa-regular fa-video"></i>
   <nav class="header__nav">
     <ul class="header__nav__list">
       <li class="header__nav__list__item">
@@ -9,9 +10,9 @@
         <h1>Welcome <%= user.username %>
         </h1>
 
-        <a href="/sign-out">Sign Out</a>
+        <a href="/sign-out" class="sign-out">Sign Out</a>
 
-        <a href="/create/movies">Add a Movie</a>
+        <a href="/create/movies" class="add-movie">Add a Movie</a>
         <% } else { %>
           <li class="header__nav__list__item">
             <a href="/sign-in">Sign In</a>

@@ -1,15 +1,21 @@
 .slidemovie {
-  display: block;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
   width: 100%;
-  height: 350px;
+  height: 500px;
   /* border-bottom: 2px solid rgb(0, 0, 0); */
+  /* border: 2px solid red; */
   padding-inline: 1em;
   /* padding-block: 1em; */
 }
 
 .slideimg {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
   width: 100%;
-  height: 350px;
+  height: 500px;
   /* padding-inline: 1em; */
   object-fit: fill;
   border-radius: 2px;
