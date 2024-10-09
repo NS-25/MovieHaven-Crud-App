@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/base.css">
-
+  <link rel="stylesheet" href="/slidemovie.css">
   <link rel="stylesheet" href="/app.css">
   <title>Home</title>
 </head>
@@ -13,24 +13,19 @@
 <body>
   <!-- Header -->
   <%- include("../partials/header.ejs") %>
-    <!-- Hero -->
-    <%- include("../partials/hero.ejs") %>
+    <!-- sildermovie -->
+    <%- include("../partials/slidemovie.ejs") %>
 
       <!-- Grid -->
       <div class="container">
         <h1 class="section__title">Popular Movie</h1>
         <div class="grid">
           <!-- card -->
-          <%- include("../partials/card.ejs") %>
-            <!-- card -->
-            <%- include("../partials/card.ejs") %>
-              <!-- card -->
-              <%- include("../partials/card.ejs") %>
-                <!-- card -->
-                <%- include("../partials/card.ejs") %>
-                  <!-- card -->
-                  <%- include("../partials/card.ejs") %>
+          <% movies.forEach(movie=> { %>
 
+            <%- include("../partials/card.ejs", {movie: movie}) %>
+            
+              <% }) %>
 
         </div>
       </div>

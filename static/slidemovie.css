@@ -1,0 +1,23 @@
+.slidemovie {
+  display: block;
+  width: 100%;
+  height: 350px;
+  /* border-bottom: 2px solid rgb(0, 0, 0); */
+  padding-inline: 1em;
+  /* padding-block: 1em; */
+}
+
+.slideimg {
+  width: 100%;
+  height: 350px;
+  /* padding-inline: 1em; */
+  object-fit: fill;
+  border-radius: 2px;
+
+}
+
+@media screen and (min-width: 600px) {
+  .slidemovie {
+    padding-inline: 15%;
+  }
+}

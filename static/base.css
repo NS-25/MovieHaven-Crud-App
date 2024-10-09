@@ -24,6 +24,9 @@ body {
   justify-content: space-between;
   padding-inline: 1em;
   border-bottom: solid 1px #4c54474c;
+  position: sticky;
+  top: 0px;
+  background-color: #629584;
 }
 
 .header__nav__list {
@@ -45,6 +48,7 @@ body {
 @media screen and (min-width: 600px) {
   .header {
     padding-inline: 15%;
+    /* padding-block: 2em; */
   }
 
   .header__nav__list {

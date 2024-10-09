@@ -11,14 +11,14 @@ const movieSchema = new Schema({
     type: String,
     require: true,
   },
-  Description: {
+  description: {
     type: String,
     require: true,
   },
-  Rating: {
+  rating: {
     type: Number,
   },
-  Duration: {
+  duration: {
     type: String,
     require: true,
   },

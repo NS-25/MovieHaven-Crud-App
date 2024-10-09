@@ -1,12 +1,25 @@
 <div class="card">
-  <div class="card__image">Image</div>
-  <d32iv class="card__body">
+  <a class="card" href="/movie/<%= movie._id %>">
+    <div class="card__image">
+      <img src="<%= movie.image %>" alt="<%= movie.title %>" />
+    </div>
+  </a>
+
+  <div class="card__body">
     <h2 class="card__title">
-      Movie Title
+      <%= movie.title %>
     </h2>
+
     <p class="card__description">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aliquid corporis iusto eligendi placeat
-      explicabo tempora, libero ex doloribus doloremque cupiditate ea in nisi. Vel exercitationem
-      perspiciatis voluptatibus cumque deleniti?
+      <%= movie.description %>
     </p>
+
+    <p class="card__duration">
+      Duration: <%= movie.duration %>
+    </p>
+
+    <p class="card__rating">
+      Rating: <%= movie.rating %>
+    </p>
+  </div>
 </div>

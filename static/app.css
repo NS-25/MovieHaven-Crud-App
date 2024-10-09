@@ -1,11 +1,7 @@
-
-
-
-.hero {
-  min-height: 300px;
-  border-bottom: 1px solid #aaaaaa;
-}
 /* home page */
+body {
+  /* background-color: #387478; */
+}
 
 .container {
   padding-inline: 1em;
@@ -21,16 +17,20 @@
 
 /* grid portion start here */
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1em;
 }
 
 /* card */
 .card {
+  display: block;
   border: solid 1px #e3e3e3;
   padding: 1em;
   border-radius: 5px;
+  max-width: max-content;
+  width: 320px;
 }
 
 .card__title {
@@ -39,10 +39,18 @@
 }
 
 .card__image {
-  min-height: 180px;
+  min-height: 80px;
 }
 
-.card__description {
+.card__image img {
+  width: 250px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.card__description,
+.card__duration,
+.card__rating {
   font-size: 0.8rem;
   color: #222222db;
   line-height: 1.5;
@@ -51,6 +59,8 @@
   -webkit-line-clamp: 2;
   overflow: hidden;
 }
+
+
 
 @media screen and (min-width: 600px) {
   .container {
