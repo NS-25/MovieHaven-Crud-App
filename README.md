@@ -8,11 +8,10 @@ Welcome to **MovieHaven**, a movie streaming website where users can discover, w
 
 
 ## Browse a vast collection of movies.
+***Create for movies by image,title, description,rating or duration.***
 ![collection](https://github.com/user-attachments/assets/d4ed0f92-bde0-4ab4-9f36-2cf2a6276678)
 
 
-
-- Create for movies by image,title, description,rating or duration.
 ## This is user login page.
 ![sigin](https://github.com/user-attachments/assets/29e8d0ac-b737-43b6-9034-69ba5db01fb3)
 
