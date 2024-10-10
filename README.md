@@ -25,7 +25,11 @@ Welcome to **MovieHaven**, a movie streaming website where users can discover, w
 - User can also edit and delete in this page.
 ![detail](https://github.com/user-attachments/assets/ac49eab0-6bcd-4ec3-a810-891616371187)
 
+## Future Enhancements
 
+- Implement user authentication for personalized movie recommendations.
+- Add user reviews and ratings for movies.
+- Integrate additional streaming services.
 
 
 
@@ -65,11 +69,7 @@ Welcome to **MovieHaven**, a movie streaming website where users can discover, w
 
 _(Replace the path above with the actual path to your screenshot)_
 
-## Future Enhancements
 
-- Implement user authentication for personalized movie recommendations.
-- Add user reviews and ratings for movies.
-- Integrate additional streaming services.
 
 ## License
 
