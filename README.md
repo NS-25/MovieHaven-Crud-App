@@ -2,7 +2,13 @@
 
 # MovieHaven
 
-Welcome to **MovieHaven**, a movie streaming website where users can discover, watch, and enjoy movies from a diverse collection. This project showcases a responsive and user-friendly design to deliver a seamless movie streaming experience.
+Welcome to **MovieHaven**, a movie streaming website where users can discover, watch, and enjoy movies from a diverse collection. This project showcases a responsive and user-friendly design to deliver a seamless movie streaming 
+experience.
+## Wireframe 
+![wireframe](https://github.com/user-attachments/assets/ef3f0bce-a544-44a3-bdaf-54700e0937a8)
+
+## ERD
+![ERD](https://github.com/user-attachments/assets/2cfb8931-f259-4bad-9d88-e0139f66a3f8)
 
 ## Features
 
