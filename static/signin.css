@@ -4,7 +4,7 @@
   align-items: center;
   /* viewport height - header height */
   height: calc(100vh - 3.5em);
-  border: 1px solid red;
+  /* border: 1px solid red; */
   background-color: #E7CCCC;
 }
 

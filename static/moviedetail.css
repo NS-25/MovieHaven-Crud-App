@@ -48,6 +48,10 @@
   /* flex-wrap: wrap; */
 }
 
+.delete__btn {
+  margin-top: 5px;
+}
+
 .movie__detail__btn button {
   font-size: medium;
   border-radius: 5px;

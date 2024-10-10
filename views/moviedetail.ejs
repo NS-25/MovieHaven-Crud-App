@@ -47,8 +47,7 @@
 
         <div class="movie__detail__btn">
 
-          <a href="/"><button>Add to my list</button>
-          </a>
+
 
           <a href="/"><button>Back to home</button>
           </a>
@@ -58,7 +57,7 @@
               <button>Edit Movie</button>
             </a>
             <form action="/movies/<%= movie._id %>?_method=DELETE" method="POST">
-              <button>Delete</button>
+              <button class="delete__btn">Delete</button>
             </form>
             <% } %>
 
