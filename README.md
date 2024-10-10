@@ -69,14 +69,3 @@ experience.
 
 4. Ensure to replace the placeholder API keys with your Movie Database API key.
 
-## Screenshot
-
-![MovieHaven Screenshot](path/to/your/screenshot.png)
-
-_(Replace the path above with the actual path to your screenshot)_
-
-
-
-## License
-
-This project is licensed under the MIT License.
